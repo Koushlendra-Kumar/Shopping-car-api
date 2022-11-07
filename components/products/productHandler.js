@@ -1,4 +1,4 @@
-const Product = require('../models/products');
+const Product = require('./productsModel');
 const { body, validationResult } = require('express-validator');
 const path = require('path');
 const crypto = require('crypto');

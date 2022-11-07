@@ -6,8 +6,8 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 
-const indexRouter = require('./routes/api/v1/index');
-const productRouter = require('./routes/api/v1/product');
+const indexRouter = require('./components/home/index');
+const productRouter = require('./components/products/product');
 
 //Production best practices
 const compression = require('compression');
@@ -35,7 +35,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/products', productRouter);
